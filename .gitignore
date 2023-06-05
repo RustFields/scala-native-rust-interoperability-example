@@ -42,3 +42,5 @@ local.*
 .gradle/
 
 .husky
+/native/Cargo.lock
+/libnative_library.so

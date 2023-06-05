@@ -1,0 +1,10 @@
+[package]
+name = "native-library"
+version = "0.1.0"
+authors = ["Filippo Vissani <filippo.vissani@studio.unibo.it>"]
+edition = "2021"
+
+[dependencies]
+
+[lib]
+crate_type = ["cdylib"] # dynamically linkable library
