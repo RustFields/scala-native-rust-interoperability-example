@@ -4,5 +4,5 @@ import scala.scalanative.unsafe.extern
 
 @extern
 object Binding {
-  def divide(a: Int, b: Int): Int = extern
+  def divide_wrapper(a: Int, b: Int): Int = extern
 }
