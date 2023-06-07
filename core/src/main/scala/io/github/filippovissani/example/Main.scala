@@ -1,8 +1,8 @@
 package io.github.filippovissani.example
 
-import io.github.filippovissani.example.Wrapper.repWithRust
+import scala.scalanative.unsafe.Zone
 
 object Main extends App {
-  private val result = repWithRust(x => x + 1, 0)
+  private val result = Binding.divide(20, 2)
   println(result)
 }

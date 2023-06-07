@@ -1,20 +1,8 @@
-scalaVersion := "3.2.2"
+ThisBuild / organization := "io.github.filippovissani"
+ThisBuild / version      := "0.1.0-SNAPSHOT"
+ThisBuild / scalaVersion := "3.2.2"
 
-// set to Debug for compilation details (Info is default)
-logLevel := Level.Info
-nativeLinkStubs := true
-// import to add Scala Native options
-import scala.scalanative.build.*
-
-// defaults set with common options shown
-nativeConfig ~= { c =>
-  c.withLTO(LTO.none) // thin
-    .withMode(Mode.debug) // releaseFast
-    .withGC(GC.immix) // commix
-}
-
-lazy val root = project
-  .in(file("./core"))
+lazy val core = (project in file("core"))
   .settings(
     name := "scala-native-rust-interoperability-example",
-  ).enablePlugins(ScalaNativePlugin)
+  )

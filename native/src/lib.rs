@@ -1,4 +1,8 @@
-#[no_mangle]
-pub extern "C" fn rep(func: extern "C" fn(i32) -> i32, input: i32) -> i32 {
-    func(input)
+pub use divider::*;
+
+pub mod divider {
+    #[no_mangle]
+    pub extern "C" fn divide(a: i32, b: i32) -> i32 {
+        a / b
+    }
 }
