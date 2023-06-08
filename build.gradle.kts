@@ -1,5 +1,5 @@
 plugins {
-
+    alias(libs.plugins.taskTree)
 }
 
 subprojects {

@@ -1,0 +1,2 @@
+[plugins]
+taskTree = "com.dorongold.task-tree:2.1.0"
