@@ -1,5 +1,5 @@
 [package]
-name = "divider"
+name = "operations"
 version = "0.1.0"
 authors = ["Filippo Vissani <filippo.vissani@studio.unibo.it>"]
 edition = "2021"

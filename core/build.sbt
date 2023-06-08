@@ -1,5 +1,13 @@
-enablePlugins(ScalaNativePlugin)
+ThisBuild / organization := "io.github.filippovissani"
+ThisBuild / version      := "0.1.0-SNAPSHOT"
+ThisBuild / scalaVersion := "3.2.2"
 
+lazy val root = (project in file("."))
+  .settings(
+    name := "scala-native-rust-interoperability-example",
+  )
+
+enablePlugins(ScalaNativePlugin)
 nativeLinkStubs := true
 // set to Debug for compilation details (Info is default)
 logLevel := Level.Info
@@ -15,7 +23,7 @@ nativeConfig ~= { c =>
 
 nativeLinkingOptions ++= {
   val path = s"${baseDirectory.value.toString.replace("core","")}native/target/release"
-  val library = "divider"
+  val library = "operations"
   Seq(s"-L$path", "-rpath", path, s"-l$library")
 }
 

@@ -6,3 +6,5 @@
 
 
 int32_t divide(int32_t a, int32_t b);
+
+int32_t generic_operation(int32_t x, int32_t (*fun)(int32_t));
