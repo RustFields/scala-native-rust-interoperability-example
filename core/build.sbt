@@ -22,7 +22,7 @@ nativeConfig ~= { c =>
 }
 
 nativeLinkingOptions ++= {
-  val path = s"${baseDirectory.value.toString.replace("core","")}native/target/release"
+  val path = s"${baseDirectory.value.getParentFile}/native/target/release"
   val library = "operations"
   Seq(s"-L$path", "-rpath", path, s"-l$library")
 }
