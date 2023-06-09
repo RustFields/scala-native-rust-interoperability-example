@@ -26,7 +26,3 @@ nativeLinkingOptions ++= {
   val library = "operations"
   Seq(s"-L$path", "-rpath", path, s"-l$library")
 }
-
-lazy val printLibrary = taskKey[Unit]("Prints the library path")
-
-printLibrary := println(s"${baseDirectory.value.toString.replace("core","")}native/target/release")
