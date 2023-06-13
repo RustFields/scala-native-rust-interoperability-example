@@ -1,7 +1,7 @@
 tasks.register("test") {
 }
 
-tasks.register("nativeLink") {
+tasks.register("sbtNativeLink") {
     project.exec {
         commandLine("sbt", "nativeLink")
     }
