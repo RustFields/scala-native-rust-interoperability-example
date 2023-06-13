@@ -35,7 +35,7 @@ The Rust library can be compiled using the following command:
 ```
 
 `cbindgen` can be used to generate C headers, this is useful to get the functions' signature, but it is not mandatory. In particular, there is a Gradle task that uses `cbindgen` to generate the headers.
-`cbindgen` can be useful because the Scala code that uses the Rust implementation must comply with the function signature.
+`cbindgen` can be useful because the Scala code that uses the Rust implementation must comply with the related C functions' signature.
 To generate C headers, run:
 
 ```bash
