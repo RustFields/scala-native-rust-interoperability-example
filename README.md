@@ -31,10 +31,16 @@ crate_type = ["staticlib"]
 The Rust library can be compiled using the following command:
 
 ```bash
-cargo build --release
+./gradlew cargoBuildRelease
 ```
 
-`cbindgen` is used to generate C headers,  which will be used by the Scala code. In particular, there is a Gradle task that uses `cbindgen` to generate the headers and puts them in `core/src/main/resources/scala-native`.
+`cbindgen` can be used to generate C headers, this is useful to get the functions' signature, but it is not mandatory. In particular, there is a Gradle task that uses `cbindgen` to generate the headers.
+`cbindgen` can be useful because the Scala code that uses the Rust implementation must comply with the function signature.
+To generate C headers, run:
+
+```bash
+./gradlew generateHeaders
+```
 
 Given the following Rust module:
 
@@ -79,7 +85,7 @@ int32_t generic_operation(int32_t x, int32_t (*fun)(int32_t));
 
 The core project is built using Scala Native and SBT.
 
-During compilation, native code located in `src/main/resources/scala-native` is integrated in the final binary. 
+During compilation, native code is integrated in the final binary. 
 In the SBT configuration are defined the clang parameters needed to link the Rust library.
 
 ```
@@ -104,3 +110,10 @@ object Binding {
 ```
 
 the functions in this object take advantage of the implementation provided in Rust and can be called like common Scala functions.
+To compile the entire project and build the runnable binary, run:
+
+```bash
+./gradlew cargoBuildRelease
+./gradlew sbtNativeLink
+```
+A binary file will be generated in `core/target/scala-3.2.2/scala-native-rust-interoperability-example-out`
