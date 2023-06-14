@@ -110,9 +110,19 @@ object Binding {
 ```
 
 The functions in this object take advantage of the implementation provided in Rust and can be called like common Scala functions.
-To run the project use the following commands:
+
+### Run the project
+
+To run the project, use the following commands:
 
 ```bash
 ./gradlew cargoBuildRelease
 ./gradlew sbtRun
+```
+
+It is also possible to run the tests:
+
+```bash
+./gradlew cargoBuildRelease
+./gradlew sbtTest
 ```
