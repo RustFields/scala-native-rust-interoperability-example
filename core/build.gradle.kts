@@ -6,3 +6,9 @@ tasks.register("sbtNativeLink") {
         commandLine("sbt", "nativeLink")
     }
 }
+
+tasks.register("sbtRun") {
+    project.exec {
+        commandLine("sbt", "run")
+    }
+}
