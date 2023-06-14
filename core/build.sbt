@@ -5,6 +5,7 @@ ThisBuild / scalaVersion := "3.2.2"
 lazy val root = (project in file("."))
   .settings(
     name := "scala-native-rust-interoperability-example",
+    libraryDependencies += "org.scalatest" % "scalatest_native0.4_3" % "3.2.16",
   )
 
 enablePlugins(ScalaNativePlugin)
