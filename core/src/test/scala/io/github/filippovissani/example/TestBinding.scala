@@ -6,7 +6,7 @@ import io.github.filippovissani.example.TypeBinding.{CFunIntToInt, CInt}
 import org.scalatest.funsuite.AnyFunSuite
 import org.scalatest.matchers.should.Matchers.shouldBe
 
-class BindingTest extends AnyFunSuite:
+class TestBinding extends AnyFunSuite:
 
   test("20 / 2 should be 10") {
     divide(20, 2) shouldBe 10
