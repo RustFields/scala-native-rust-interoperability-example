@@ -109,11 +109,10 @@ object Binding {
 }
 ```
 
-the functions in this object take advantage of the implementation provided in Rust and can be called like common Scala functions.
-To compile the entire project and build the runnable binary, run:
+The functions in this object take advantage of the implementation provided in Rust and can be called like common Scala functions.
+To run the project use the following commands:
 
 ```bash
 ./gradlew cargoBuildRelease
-./gradlew sbtNativeLink
+./gradlew sbtRun
 ```
-A binary file will be generated in `core/target/scala-3.2.2/scala-native-rust-interoperability-example-out`
