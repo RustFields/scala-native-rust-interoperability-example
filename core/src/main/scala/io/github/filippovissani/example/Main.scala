@@ -6,7 +6,7 @@ import scala.scalanative.unsafe
 
 object Main extends App:
   private val myLambdaFuncPtr: CFunIntToInt = (x: CInt) => x + 1
-  private var result = divide(20, 2)
-  println(result)
-  result = generic_operation(665, myLambdaFuncPtr)
-  println(result)
+  private val divideResult = divide(20, 2)
+  private val genericOperationResult = generic_operation(43, myLambdaFuncPtr)
+  println(divideResult)
+  println(genericOperationResult)
